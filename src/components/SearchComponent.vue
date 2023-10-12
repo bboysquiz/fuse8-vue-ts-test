@@ -138,6 +138,18 @@ const formatDate = (dateString: string) => {
     box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
     margin-top: 0;
 }
+.search__block:first-child > .search__joke-text {
+    width: 758px;
+}
+.search__block:first-child > .search__joke-footer {
+    width: 758px;
+}
+.search__block:nth-child(2) > .search__joke-text {
+    width: 758px;
+}
+.search__block:nth-child(2) > .search__joke-footer {
+    width: 758px;
+}
 
 .search__joke-text {
     width: 458px;
@@ -177,16 +189,16 @@ const formatDate = (dateString: string) => {
         margin-top: 20px;
     }
     .search__block:first-child > .search__joke-text {
-        width: 100%;
+        width: 758px;
     }
     .search__block:first-child > .search__joke-footer {
-        width: 100%;
+        width: 758px;
     }
     .search__block:nth-child(2) > .search__joke-text {
-        width: 100%;
+        width: 758px;
     }
     .search__block:nth-child(2) > .search__joke-footer {
-        width: 100%;
+        width: 758px;
     }
     .search__block {
         width: 620px;
@@ -204,6 +216,18 @@ const formatDate = (dateString: string) => {
         width: 100%;
     }
     .search__joke-footer{
+        width: 100%;
+    }
+    .search__block:first-child > .search__joke-text {
+        width: 100%;
+    }
+    .search__block:first-child > .search__joke-footer {
+        width: 100%;
+    }
+    .search__block:nth-child(2) > .search__joke-text {
+        width: 100%;
+    }
+    .search__block:nth-child(2) > .search__joke-footer {
         width: 100%;
     }
 }
