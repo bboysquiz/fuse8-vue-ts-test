@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import SearchComponent from './components/SearchComponent.vue';
+
 
 </script>
 
 <template>
-  <input type="text" class="search">
+  <SearchComponent />
 </template>
 
 <style scoped>
