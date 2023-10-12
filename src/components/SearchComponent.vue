@@ -10,6 +10,11 @@ const handleInput = async () => {
         await getJokes(query.value);
     }
 }
+
+const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return `${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}.${date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1).toString() : date.getMonth() + 1}.${date.getFullYear()}`;
+}
 </script>
 
 <template>
@@ -23,7 +28,7 @@ const handleInput = async () => {
                 <p class="search__joke-text">{{ joke.value }}</p>
                 <div class="search__joke-footer">
                     <p class="search__joke-id">{{ joke.id }}</p>
-                    <div class="search__joke-date">{{ joke.created_at }}</div>
+                    <div class="search__joke-date">{{ formatDate(joke.created_at) }}</div>
                 </div>
             </div>
         </div>
@@ -38,6 +43,7 @@ const handleInput = async () => {
     justify-content: center;
     margin: 128px auto 0 auto;
 }
+
 .search__input-wrapper {
     display: flex;
     justify-content: center;
@@ -88,13 +94,15 @@ const handleInput = async () => {
     align-items: center;
     display: flex;
 }
-.search__block-wrapper{
+
+.search__block-wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 60px;
 }
+
 .search__block {
     width: 518px;
     box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
@@ -105,6 +113,7 @@ const handleInput = async () => {
     box-sizing: border-box;
     margin-top: 20px;
 }
+
 .search__block:first-child {
     box-sizing: border-box;
     width: 788px;
@@ -116,6 +125,7 @@ const handleInput = async () => {
     box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
     margin-top: 0;
 }
+
 .search__block:nth-child(2) {
     box-sizing: border-box;
     width: 788px;
@@ -127,6 +137,7 @@ const handleInput = async () => {
     box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
     margin-top: 0;
 }
+
 .search__joke-text {
     width: 458px;
     font-family: Fira Sans;
@@ -136,12 +147,14 @@ const handleInput = async () => {
     letter-spacing: 0px;
     color: #282626;
 }
-.search__joke-footer{
+
+.search__joke-footer {
     width: 458px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .search__joke-footer {
     font-family: Montserrat;
     font-size: 14px;
@@ -150,6 +163,4 @@ const handleInput = async () => {
     letter-spacing: 0px;
     color: #767676;
 
-}
-
-</style>
+}</style>
