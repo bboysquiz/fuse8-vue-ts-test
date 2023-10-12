@@ -24,13 +24,13 @@ const formatDate = (dateString: string) => {
             <div class="search__jokes-conter">Found jokes: {{ data.jokes.length }}</div>
         </div>
         <div class="search__block-wrapper">
-            <div class="search__block" v-for="joke in data.jokes" :key="joke.id">
+            <a :href='joke.url' class="search__block" v-for="joke in data.jokes" :key="joke.id">
                 <p class="search__joke-text">{{ joke.value }}</p>
                 <div class="search__joke-footer">
                     <p class="search__joke-id">{{ joke.id }}</p>
                     <div class="search__joke-date">{{ formatDate(joke.created_at) }}</div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </template>
@@ -112,6 +112,7 @@ const formatDate = (dateString: string) => {
     flex-wrap: wrap;
     box-sizing: border-box;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .search__block:first-child {
