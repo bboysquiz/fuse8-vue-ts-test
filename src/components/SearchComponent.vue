@@ -21,8 +21,10 @@ const handleInput = async () => {
         <div class="search__block-wrapper">
             <div class="search__block" v-for="joke in data.jokes" :key="joke.id">
                 <p class="search__joke-text">{{ joke.value }}</p>
-                <p class="search__joke-id">{{ joke.id }}</p>
-                <div class="search__joke-date">{{ joke.created_at }}</div>
+                <div class="search__joke-footer">
+                    <p class="search__joke-id">{{ joke.id }}</p>
+                    <div class="search__joke-date">{{ joke.created_at }}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -85,4 +87,69 @@ const handleInput = async () => {
     padding-top: 20px;
     align-items: center;
     display: flex;
-}</style>
+}
+.search__block-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.search__block {
+    width: 518px;
+    box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+    padding: 30px 30px 25px 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.search__block:first-child {
+    box-sizing: border-box;
+    width: 788px;
+    height: 262px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 40px 25px 40px;
+    box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+    margin-top: 0;
+}
+.search__block:nth-child(2) {
+    box-sizing: border-box;
+    width: 788px;
+    height: 262px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 40px 25px 40px;
+    box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
+    margin-top: 0;
+}
+.search__joke-text {
+    width: 458px;
+    font-family: Fira Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #282626;
+}
+.search__joke-footer{
+    width: 458px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search__joke-footer {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0px;
+    color: #767676;
+
+}
+
+</style>
