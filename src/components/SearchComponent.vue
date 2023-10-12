@@ -21,7 +21,7 @@ const formatDate = (dateString: string) => {
     <div class="search__container">
         <div class="search__input-wrapper">
             <input class="search__input" v-model="query" @input='handleInput' placeholder="Some value" autofocus />
-            <div class="search__jokes-conter">Found jokes: {{ data.jokes.length }}</div>
+            <div class="search__jokes-counter">Found jokes: {{ data.jokes.length }}</div>
         </div>
         <div class="search__block-wrapper">
             <a :href='joke.url' class="search__block" v-for="joke in data.jokes" :key="joke.id">
@@ -81,7 +81,7 @@ const formatDate = (dateString: string) => {
     color: #656EC2;
 }
 
-.search__jokes-conter {
+.search__jokes-counter {
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -164,4 +164,88 @@ const formatDate = (dateString: string) => {
     letter-spacing: 0px;
     color: #767676;
 
-}</style>
+}
+@media screen and (max-width: 1600px) {
+    .search__container{
+        width: 1280px;
+    }
+    .search__block:first-child {
+        width: 1280px;
+    }
+    .search__block:nth-child(2) {
+        width: 1280px;
+        margin-top: 20px;
+    }
+    .search__block:first-child > .search__joke-text {
+        width: 100%;
+    }
+    .search__block:first-child > .search__joke-footer {
+        width: 100%;
+    }
+    .search__block:nth-child(2) > .search__joke-text {
+        width: 100%;
+    }
+    .search__block:nth-child(2) > .search__joke-footer {
+        width: 100%;
+    }
+    .search__block {
+        width: 620px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .search__container{
+        width: 1024px;
+    }
+    .search__block {
+        width: 100%;
+    }
+    .search__joke-text {
+        width: 100%;
+    }
+    .search__joke-footer{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .search__container{
+        width: 768px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .search__container{
+        width: 480px;
+    }
+    .search__input-wrapper {
+        width: 480px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .search__container{
+        width: 320px;
+    }
+    .search__input-wrapper {
+        width: 320px;
+    }
+    .search__joke-footer {
+        flex-wrap: wrap
+    }
+}
+@media screen and (max-width: 320px) {
+    .search__container{
+        width: 250px;
+    }
+    .search__input-wrapper {
+        width: 250px;
+    }
+    .search__block {
+        padding: 10px 10px 5px 10px;
+    }
+    .search__block:first-child {
+        padding: 10px 10px 5px 10px;
+    }
+    .search__block:nth-child(2) {
+        padding: 10px 10px 5px 10px;
+    }
+}
+</style>
